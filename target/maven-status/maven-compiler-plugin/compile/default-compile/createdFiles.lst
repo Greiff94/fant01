@@ -1,0 +1,10 @@
+com\mycompany\fant\auth\AuthenticationService.class
+com\mycompany\fant\auth\User.class
+com\mycompany\fant\auth\KeyService.class
+com\mycompany\fant\JAXRSConfiguration.class
+com\mycompany\fant\resources\SecurityConfiguration.class
+com\mycompany\fant\auth\Group.class
+com\mycompany\fant\auth\User$State.class
+com\mycompany\fant\resources\JavaEE8Resource.class
+com\mycompany\fant\auth\AuthRunOnStartup.class
+com\mycompany\fant\resources\DatasourceProducer.class
