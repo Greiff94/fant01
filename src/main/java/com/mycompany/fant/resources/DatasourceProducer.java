@@ -16,7 +16,7 @@ import static com.mycompany.fant.resources.DatasourceProducer.JNDI_NAME;
 @DataSourceDefinition(
     name = JNDI_NAME,
     className = "org.h2.jdbcx.JdbcDataSource",
-    url = "jdbc:h2:mem:fantdb")
+    url = "jdbc:h2:~/fantdb.db")
 public class DatasourceProducer {
     public static final String JNDI_NAME =  "java:app/jdbc/default";
 
