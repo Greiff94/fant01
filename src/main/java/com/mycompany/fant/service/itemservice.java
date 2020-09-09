@@ -26,7 +26,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 /**
  *
@@ -38,10 +37,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 public class ItemService {
     
      @Inject
-    AuthenticationService authService;    
-    
-    @Inject
-    MailService mailService;
+    AuthenticationService authService;
     
     @Context
     SecurityContext sc;
@@ -49,10 +45,11 @@ public class ItemService {
     @PersistenceContext
     EntityManager em;
     
-    /** path to store photos */
+    /** path to store photos 
     @Inject
     @ConfigProperty(name = "photo.storage.path", defaultValue = "fantphotos")
     String photoPath;
+    */
     
     /**
      * lists all items
