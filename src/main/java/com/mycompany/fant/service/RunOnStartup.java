@@ -20,7 +20,7 @@ public class RunOnStartup {
     EntityManager em;
 
     @Inject
-    itemservice itemService;
+    ItemService itemService;
     
     @PostConstruct
     public void init() {
