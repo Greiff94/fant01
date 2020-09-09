@@ -4,7 +4,6 @@
   <persistence-unit name="my_persistence_unit">
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:fantdb"/>
     </properties>
   </persistence-unit>
 </persistence>
