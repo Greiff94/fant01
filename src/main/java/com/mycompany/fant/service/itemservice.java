@@ -96,7 +96,6 @@ public class ItemService {
   */
     @POST
     @Path("add")
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
     @RolesAllowed({Group.USER})
     public Response addItem(
             @FormParam("item") String item,
