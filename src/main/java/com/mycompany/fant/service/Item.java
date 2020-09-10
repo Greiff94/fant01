@@ -43,5 +43,8 @@ public class Item implements Serializable {
     @ManyToOne
     private User itemBuyer;
     
+    
+
+    
             
 }

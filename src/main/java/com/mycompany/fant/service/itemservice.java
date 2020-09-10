@@ -106,6 +106,18 @@ public class ItemService {
         return Response.ok().build();
    
 }
+    @PUT
+    @Path("email")
+    @RolesAllowed({Group.USER})
+    public Response setEmail(
+            @QueryParam("uid") String uid,
+            @FormParam("email") String email){
+        User user = this.getCurrentUser();
+        if(user.getEmail()==null){
+            user.setEmail(email);
+        }
+        return Response.ok().build();
+    }
     
     @PUT
     @Path("purchase")
@@ -122,6 +134,8 @@ public class ItemService {
              }
         }return Response.notModified().build();
     }
+    
+    
             
     
         private User getCurrentUser(){
