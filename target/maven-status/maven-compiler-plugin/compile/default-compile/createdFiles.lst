@@ -1,4 +1,5 @@
 com\mycompany\fant\JAXRSConfiguration.class
+com\mycompany\fant\service\MediaObject.class
 com\mycompany\fant\resources\SecurityConfiguration.class
 com\mycompany\fant\service\ItemService.class
 com\mycompany\fant\service\RunOnStartup.class
@@ -6,10 +7,12 @@ com\mycompany\fant\auth\AuthRunOnStartup.class
 com\mycompany\fant\service\MailService$1.class
 com\mycompany\fant\auth\AuthenticationService.class
 com\mycompany\fant\auth\User.class
+com\mycompany\fant\service\AbstractDomain.class
 com\mycompany\fant\auth\KeyService.class
 com\mycompany\fant\service\MailService.class
 com\mycompany\fant\auth\Group.class
 com\mycompany\fant\auth\User$State.class
 com\mycompany\fant\resources\JavaEE8Resource.class
+com\mycompany\fant\service\MediaObjectAdapter.class
 com\mycompany\fant\service\Item.class
 com\mycompany\fant\resources\DatasourceProducer.class

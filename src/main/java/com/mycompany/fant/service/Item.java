@@ -9,6 +9,9 @@ import com.mycompany.fant.auth.User;
 import static com.mycompany.fant.service.Item.FIND_ALL_ITEMS;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.json.bind.annotation.JsonbTypeAdapter;
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -36,6 +39,13 @@ public class Item implements Serializable {
     private String description;
     private int price;
     
+    /*
+    Mikael photo
+    */
+    @JsonbTypeAdapter(MediaObjectAdapter.class)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    List<MediaObject> photos;
+    
     @ManyToOne
     @JoinColumn(nullable = false)
     private User itemOwner;
@@ -43,7 +53,16 @@ public class Item implements Serializable {
     @ManyToOne
     private User itemBuyer;
     
-    
+       /*
+    Mikael photo
+    */
+    public void addPhoto(MediaObject photo) {
+        if(this.photos == null) {
+            this.photos = new ArrayList<>();
+        }
+        
+        this.photos.add(photo);
+    }
 
     
             

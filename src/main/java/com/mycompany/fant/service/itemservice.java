@@ -135,10 +135,7 @@ public class ItemService {
         }return Response.notModified().build();
     }
     
-    
-            
-    
-        private User getCurrentUser(){
+    private User getCurrentUser(){
         return em.find(User.class, sc.getUserPrincipal().getName());
     }
 }
