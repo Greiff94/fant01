@@ -25,6 +25,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 
 /**
@@ -48,14 +49,11 @@ public class ItemService {
     @Inject
     MailService mailService;
     
-    /** path to store photos 
+ 
     @Inject
     @ConfigProperty(name = "photo.storage.path", defaultValue = "fantphotos")
     String photoPath;
-    * 
-    * 
-    * 
-    */
+
     
     
     
@@ -137,6 +135,10 @@ public class ItemService {
     
     private User getCurrentUser(){
         return em.find(User.class, sc.getUserPrincipal().getName());
+    }
+    
+    private String getPhotoPath(){
+        return photoPath;
     }
 }
     

@@ -41,6 +41,7 @@ import javax.ws.rs.POST;
 import com.mycompany.fant.resources.DatasourceProducer;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import static org.eclipse.microprofile.jwt.Claims.email;
 
 
 import org.eclipse.microprofile.jwt.JsonWebToken;
@@ -161,25 +162,27 @@ public class AuthenticationService {
     }
 
     /**
-     * Does an insert into the AUSER and AUSERGROUP tables. It creates a SHA-256
-     * hash of the password and Base64 encodes it before the user is created in
-     * the database. The authentication system will read the AUSER table when
-     * doing an authentication.
+     * Does an insert into the AUSER and AUSERGROUP tables.It creates a SHA-256
+ hash of the password and Base64 encodes it before the user is created in
+ the database. The authentication system will read the AUSER table when
+ doing an authentication.
      *
      * @param uid
      * @param pwd
+     * @param email
      * @return
      */
     @POST
     @Path("create")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createUser(@FormParam("uid") String uid, @FormParam("pwd") String pwd) {
+    public Response createUser(@FormParam("uid") String uid, @FormParam("pwd") String pwd, @FormParam("email") String email) {
         User user = em.find(User.class, uid);
         if (user != null) {
             log.log(Level.INFO, "user already exists {0}", uid);
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else {
             user = new User();
+            user.setEmail(email);
             user.setUserid(uid);
             user.setPassword(hasher.generate(pwd.toCharArray()));
             Group usergroup = em.find(Group.class, Group.USER);
