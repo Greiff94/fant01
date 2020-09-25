@@ -46,7 +46,6 @@ public class MailService {
      * @param to
      * @param subject
      * @param body
-     * @return 
      */    
     public void sendEmail(String to, String subject, String body) {
         try {
